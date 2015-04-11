@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Icon version="1" frameRate="1" width="192" height="192" resDensity="480" extraResourcesDensity="320,480,640" extraResources="sw1536-den320:den320:1.235" extraScaleByDensity="320:0.708,640:1.176" extraScales="sw1536-den320:0.875">
+	<Var name="hour_angle_raw" expression="#hour12*30+#minute/2"/>
+	<Var name="minute_angle_raw" expression="#minute*6+#second/10"/>
+	<Var name="second_angle_raw" expression="#second*6"/>
+	<Image x="96" y="96" align="center" alignV="center" src="icon_bg.png"/>
+	<Image x="96" y="96" align="center" alignV="center" src="dial.png" alpha="128"/>
+	<Group w="192" h="192" layered="true" pivotX="96" pivotY="96" rotation="#second_angle_raw">
+		<Image x="96" y="96" align="center" alignV="center" src="second_sweep.png" antiAlias="true"/>
+		<Image x="96" y="96" align="center" alignV="center" src="dial.png" antiAlias="true" xfermode="dst_in"/>
+	</Group>
+	<Image name="hand_hour" x="96" y="53" align="center" pivotX="4" pivotY="43" src="hour.png" rotation="#hour_angle_raw" antiAlias="true"/>
+	<Image name="hand_minute" x="96" y="49" align="center" pivotX="8" pivotY="47" src="minute.png" rotation="#minute_angle_raw" antiAlias="true"/>
+</Icon>
